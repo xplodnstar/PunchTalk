@@ -1,0 +1,35 @@
+html {
+  box-sizing:border-box;
+}
+
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: mediumpurple;
+    color: rebeccapurple;
+
+}
+
+.mssgBoard {
+    width: 750px;
+    margin: auto;
+    background-color: lavender;
+
+}
+
+.mssgLine {
+    list-style: none;   
+    display: flex;
+    justify-content: space-between; 
+}
+
+.mssgText {
+    font-weight: 600;
+}
+
+.mssgTime {
+    font-weight: 200;
+}

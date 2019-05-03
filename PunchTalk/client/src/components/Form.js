@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { send } from "../actions/actions"
+import '../styles/styles.css'
 
 export default (props) => {
     const [text, setText] = useState('')
@@ -7,7 +8,8 @@ export default (props) => {
     function sendMssg(e) {
         e.preventDefault()
         send(text)
-        // setText('')
+        // need to reset the input
+        setText(" ")
     }
 
     return (

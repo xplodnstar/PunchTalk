@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants';
+import { createUsername } from '../actions/actions'
 
-export default (props) => {
+
+export default props => {
     const [username, setUsername] = useState('')
 
-    function login(e) {
+    function sendUsername(e) {
         e.preventDefault()
-
+        createUsername(username)
     }
 
-    return {
-        < form onSubmit = { login() } >
-        <input type="text" value="username" placeholder="Enter your username" onChange={e => setUsername(e.target.value)} 
-        </ form>
-            }
+    return (
+        < form onSubmit={sendUsername} >
+            <input type="text" placeholder="Enter your username" onChange={e => setUsername(e.target.value)}></input>
+            <button type="submit">Submit</button>
+        </form >
+    )
 }
