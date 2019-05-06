@@ -1,7 +1,7 @@
 const initialState = {
   messages: [],
   username: '',
-
+  users: [],
 }
 
 export default function (state = initialState, action) {
@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
     case 'ADD_MSSG':
       return { ...state, messages: [action.payload, ...state.messages] }
     case 'MAKE_USERNAME':
-      return { ...state, username: action.payload }
+      return { ...state, username: action.payload, users: [action.payload, ...state.messages] }
     default:
       return state
   }

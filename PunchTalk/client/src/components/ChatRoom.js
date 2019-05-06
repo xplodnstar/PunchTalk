@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import Form from './Form'
 import Login from './Login'
 import Messages from './Messages'
+import '../styles/styles.css'
 
 const ChatRoom = (props) => {
     return (
-        <div>
+        <div className="mssgBody">
+            <div className="title">PunchTalk</div>
             {props.username ? (
                 <div>
                     <Form></Form>

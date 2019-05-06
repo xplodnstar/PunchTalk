@@ -9,7 +9,7 @@ const Messages = (props) => {
         <ul className="mssgBoard">
             {props.messages.map((mssg, i) => (
                 <li key={"mssg" + i} className="mssgLine">
-                    <div className="mssgText">{mssg.username}: {mssg.text}</div><div className="mssgTime">{timeStamp}</div>
+                    <div className="mssgText"><div className="mssgUser">{mssg.username}:</div>&nbsp;{mssg.text}</div><div className="mssgTime">{timeStamp}</div>
                 </li>
             ))}
         </ul>
@@ -17,7 +17,6 @@ const Messages = (props) => {
 }
 
 function mapStateToProp(appState) {
-    console.log(appState)
     return {
         messages: appState.messages
     }
