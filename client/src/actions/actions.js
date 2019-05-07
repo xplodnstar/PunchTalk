@@ -11,13 +11,6 @@ export function send(text) {
     })
 }
 
-// export function createUsername(username) {
-//     store.dispatch({
-//         type: 'MAKE_USERNAME',
-//         payload: username
-//     })
-// }
-
 socket.on('new message', message => {
 
     store.dispatch({
