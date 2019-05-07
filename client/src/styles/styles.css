@@ -1,0 +1,166 @@
+html {
+  box-sizing:border-box;
+}
+
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: mediumpurple;
+    color: rebeccapurple;
+
+}
+
+.login {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.pad {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.or {
+    text-align: center;
+}
+
+.chatRoom {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.chatRoom div {
+    align-items: stretch;
+}
+
+.channelList {
+    background: darkred;
+    width: 200px;
+}
+
+.userList {
+    background: navy;
+    width: 200px;
+}
+
+.mssgBody {
+    width: 750px;
+    margin: auto;
+    flex-grow: 1;
+    min-width: 750px;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.formInput {
+    width: 750px;
+    margin: 20px auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.userName {
+    width: 750px;
+    height: 30px;
+    font-size: 24px;
+    margin: 20px auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.mssgInput {
+    height: 28px;
+    width: 400px;
+    font-size: 18px;
+    color: rebeccapurple;
+    background-color: lavender;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.mssgButton {
+    height: 30px;
+    width: 100px;
+    margin: 0 15px;
+    font-size: 18px;
+    color: rebeccapurple;
+    background-color: lavender;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.mssgBoard {
+    width: 750px;
+    margin: 20px auto;
+    background-color: lavender;
+
+}
+
+.mssgLine {
+    list-style: none;   
+    display: flex;
+    justify-content: space-between; 
+    padding: 3px 20px;
+}
+
+.mssgText {
+    font-weight: 600;
+    display: flex;
+}
+
+.mssgTime {
+    font-weight: 200;
+}
+
+/* .mssgUser:nth-of-type(1) {
+    color: rgb(187, 5, 5);
+}
+
+.mssgUser:nth-of-type(2) {
+    color: rgb(187, 105, 5);
+}
+
+.mssgUser:nth-of-type(3) {
+    color: rgb(5, 187, 5);
+}
+
+.mssgUser:nth-of-type(4) {
+    color: rgb(5, 5, 187);
+}
+
+.mssgUser:nth-of-type(5) {
+    color: rgb(105, 5, 187);
+}
+
+.mssgUser:nth-of-type(6) {
+    color: rgb(187, 5, 187);
+}
+
+.mssgUser:nth-of-type(7) {
+    color: rgb(108, 74, 24);
+}
+
+.mssgUser:nth-of-type(8) {
+    color: rgb(0, 0, 0);
+} */
