@@ -1,0 +1,10 @@
+{
+    "db": {
+        "hostname": "localhost",
+        "username": "punchtalk",
+        "password": "punchtalk",
+        "database": "punchtalk"
+    },
+    "secret": "ThisIsMyPunchTalkSecretCode!",
+    "salt": "AndHereIsSomeSalt*"
+}
