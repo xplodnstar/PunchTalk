@@ -13,6 +13,7 @@ body {
 
 }
 
+/* login and register pages */
 .login {
     width: 400px;
     margin: auto;
@@ -36,6 +37,7 @@ body {
     text-align: center;
 }
 
+/* main page */
 .chatRoom {
     display: flex;
     position: absolute;
@@ -45,47 +47,61 @@ body {
     right: 0;
 }
 
-.chatRoom div {
+/* .chatRoom div {
     align-items: stretch;
-}
+} */
 
+/* sidebars */
 .channelList {
-    background: darkred;
+    background-color: mediumpurple;
+    border-right: solid 2px mediumpurple;
     width: 200px;
 }
 
 .userList {
-    background: navy;
+    background-color: mediumpurple;
+    border-left: solid 2px mediumpurple;
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
+.logoutButton {
+    width: 180px;
+}
+
+/* center section */
 .mssgBody {
-    width: 750px;
-    margin: auto;
+    margin: 10px auto;
     flex-grow: 1;
-    min-width: 750px;
+    min-width: 450px;
+   
+
 }
 
 .title {
     font-size: 30px;
     text-align: center;
-}
-
-.formInput {
-    width: 750px;
-    margin: 20px auto;
-    text-align: center;
-    display: inline-block;
+    font-weight: 900;
 }
 
 .userName {
-    width: 750px;
+    
     height: 30px;
     font-size: 24px;
-    margin: 20px auto;
+    margin: 10px auto;
+    text-align: center;
+   
+}
+
+.formInput {
+    width: 100%;
+    margin: 10px auto;
     text-align: center;
     display: inline-block;
 }
+
 
 .mssgInput {
     height: 28px;
@@ -95,7 +111,7 @@ body {
     background-color: lavender;
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 15px;
 }
 
 .mssgButton {

@@ -1,21 +1,37 @@
 import io from "socket.io-client"
 import store from '../store'
 
-const socket = io.connect("http://localhost:3001")
+let socket = null
 
-export function send(text) {
-    const username = store.getState().username
-    socket.emit("new message", {
-        text: text,
-        username: username
+export function connect(user) {
+    socket = io.connect("http://localhost:3001")
+
+    socket.emit("join", user)
+
+    socket.on("new message", message => {
+        addMssg(message)
+    })
+
+    socket.on("user list", users => {
+        ListUsers(users)
     })
 }
 
-socket.on('new message', message => {
 
+export function send(message) {
+    socket.emit("new message", message)
+}
+
+export function addMssg(message) {
     store.dispatch({
         type: 'ADD_MSSG',
         payload: message
     })
-})
+}
 
+export function ListUsers(users) {
+    store.dispatch({
+        type: "LIST_USERS",
+        payload: users
+    })
+}

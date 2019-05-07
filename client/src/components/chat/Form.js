@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { AuthContext } from "../../lib/auth"
 import { send } from '../../actions/actions'
 import { connect } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 const Form = (props) => {
-    const [text, setText] = useState()
-    // const username = props.username
+    const [text, setText] = useState('')
+    const { user } = useContext(AuthContext)
+    // const messages = useSelector(appState => appState.messages)
 
     function sendMssg(e) {
         e.preventDefault()
-        send(text)
+        send({ user, text, time: new Date() })
         setText("")
     }
 
@@ -25,7 +28,6 @@ const Form = (props) => {
 function mapStateToProp(appState) {
     return {
         messages: appState.messages,
-        username: appState.username
     }
 }
 

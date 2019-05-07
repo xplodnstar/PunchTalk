@@ -1,17 +1,19 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { AuthContext } from "../../lib/auth"
-import { connect } from 'react-redux'
+import { connect as socketconnect } from '../../actions/actions'
 import ChannelList from './ChannelList'
 import Form from './Form'
 import Messages from './Messages'
+import { connect } from 'react-redux'
+import UserList from './UserList'
 
 const ChatRoom = (props) => {
-    const { signout, user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
-    function logout() {
-        signout()
-        props.history.push("/")
-    }
+    useEffect(() => {
+        socketconnect(user)
+    }, [user])
+
     return (
         <div className="chatRoom">
             <div className="channelList"><ChannelList></ChannelList></div>
@@ -22,9 +24,8 @@ const ChatRoom = (props) => {
                     <Form></Form>
                     <Messages></Messages>
                 </div>
-                <button onClick={logout}>Logout</button>
             </div>
-            <div className="userList"></div>
+            <div className="userList"><UserList></UserList></div>
         </div>
     )
 }
