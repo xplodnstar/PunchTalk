@@ -8,7 +8,7 @@ html {
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: mediumpurple;
+    background-color: #d1c4e9;
     color: rebeccapurple;
 
 }
@@ -53,14 +53,14 @@ body {
 
 /* sidebars */
 .channelList {
-    background-color: mediumpurple;
-    border-right: solid 2px mediumpurple;
+    background-color: #d1c4e9;
+    border-right: solid 2px #d1c4e9;
     width: 200px;
 }
 
 .userList {
-    background-color: mediumpurple;
-    border-left: solid 2px mediumpurple;
+    background-color: #d1c4e9;
+    border-left: solid 2px #d1c4e9;
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -84,6 +84,20 @@ body {
     font-size: 30px;
     text-align: center;
     font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spacer {
+    width: 120px;
+}
+
+.profileLink {
+    text-decoration: none;
+}
+
+.profileButton {
+    
 }
 
 .userName {
@@ -147,6 +161,10 @@ body {
 
 .mssgTime {
     font-weight: 200;
+}
+
+.material-icons {
+    color: #707070;
 }
 
 /* .mssgUser:nth-of-type(1) {
