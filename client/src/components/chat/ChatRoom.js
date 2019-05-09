@@ -6,7 +6,7 @@ import Form from './Form'
 import Messages from './Messages'
 import { connect } from 'react-redux'
 import UserList from './UserList'
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
 
 const ChatRoom = (props) => {
     const { user } = useContext(AuthContext)
@@ -20,9 +20,9 @@ const ChatRoom = (props) => {
             <div className="channelList"><ChannelList></ChannelList></div>
             <div className="mssgBody">
                 <div className="title">
-                    <div className="spacer">&nbsp;</div>
+                    {/* <div className="spacer">&nbsp;</div> */}
                     <div><span>PunchTalk</span></div>
-                    <div><a href="./auth/Profile" target="_blank" className="profileLink"><Button variant="outlined" color="primary" className="profileButton">Edit Profile</Button></a></div>
+                    {/* <div><a href="/Profile" target="_blank" className="profileLink"><Button variant="outlined" color="primary" className="profileButton">Edit Profile</Button></a></div> */}
                 </div>
                 <div className="userName">{user}</div>
                 <div>

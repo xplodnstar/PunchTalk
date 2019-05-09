@@ -3,7 +3,7 @@ import { Provider } from "react-redux"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from "../store"
 import ChatRoom from './chat/ChatRoom'
-import Profile from './auth/Profile'
+// import Profile from './auth/Profile'
 import "../styles/styles.css"
 import { AuthProvider, AuthRoute } from "../lib/auth"
 import Login from "./auth/Login"
@@ -46,7 +46,7 @@ const App = props => {
 
               {/* private routes */}
               <AuthRoute path="/" exact component={ChatRoom} />
-              <Profile path="/profile" component={Profile} />
+              {/* <AuthRoute path="/profile" exact component={Profile} /> */}
             </div>
           </MuiThemeProvider>
         </Router>

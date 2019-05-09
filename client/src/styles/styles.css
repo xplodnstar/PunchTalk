@@ -85,7 +85,8 @@ body {
     text-align: center;
     font-weight: 900;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
 }
 
 .spacer {
@@ -96,9 +97,9 @@ body {
     text-decoration: none;
 }
 
-.profileButton {
+/* .profileButton {
     
-}
+} */
 
 .userName {
     
@@ -151,20 +152,39 @@ body {
     list-style: none;   
     display: flex;
     justify-content: space-between; 
-    padding: 3px 20px;
+    padding: 3px 5px;
+}
+
+.mssgUser {
+    font-weight: 600;
+    margin-left: -30px;
 }
 
 .mssgText {
-    font-weight: 600;
+    /* font-weight: 400; */
     display: flex;
 }
 
 .mssgTime {
+    width: 120px;
     font-weight: 200;
+    margin-right: 20px;
 }
 
 .material-icons {
     color: #707070;
+}
+
+#username, #password, #confirm, #fname, #lname, #location, #picture, #status {
+    width: 250px;
+}
+
+.chatLink {
+    text-decoration: none;
+}
+
+.profDataButton {
+
 }
 
 /* .mssgUser:nth-of-type(1) {

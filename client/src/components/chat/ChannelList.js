@@ -5,10 +5,10 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 const channels = [
     {
-        name: '#one'
+        name: ''
     },
     {
-        name: '#two'
+        name: ''
     }
 ]
 

@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-// import AccountBox from '@material-ui/icons/AccountBox';
+import Button from '@material-ui/core/Button'
 // import LocationOn from '@material-ui/icons/LocationOn';
 // import Image from '@material-ui/icons/Image';
 // import Face from '@material-ui/icons/Face';
@@ -64,119 +64,142 @@ const Profile = (props) => {
         setValues({ ...values, showConfirm: !values.showConfirm });
     };
 
+    function sendProfile(e) {
+        e.preventDefault()
+        // sendProfData({ user, text, time: new Date() })
+    }
+
     return (
         <div className={classes.root}>
-            <form>
-                <div><TextField
-                    id="username"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="Username"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">account_box</i>
-                        </InputAdornment>,
-                    }}
-                /></div>
-                <div><TextField
-                    id="password"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    type={values.showPassword ? 'text' : 'password'}
-                    label="Password"
-                    value={values.password}
-                    onChange={handleChange('password')}
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <IconButton aria-label="Toggle password visibility" onClick={handleClickShowPassword}>
-                                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                </IconButton>
-                            </InputAdornment>
-                        ),
-                    }}
-                /></div>
-                <div><TextField
-                    id="confirm"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    type={values.showConfirm ? 'text' : 'confirm'}
-                    label="Confirm"
-                    value={values.confirm}
-                    onChange={handleChange('confirm')}
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <IconButton aria-label="Toggle confirm visibility" onClick={handleClickShowConfirm}>
-                                    {values.showConfirm ? <VisibilityOff /> : <Visibility />}
-                                </IconButton>
-                            </InputAdornment>
-                        ),
-                    }}
-                /></div>
-                <div><TextField
-                    id="fname"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="First Name"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">person</i>
-                        </InputAdornment>,
-                    }}
-                /></div>
-                <div><TextField
-                    id="lname"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="Last Name"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">perm_identity</i>
-                        </InputAdornment>,
-                    }}
-                /></div>
-                <div><TextField
-                    id="location"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="Location"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">location_on</i>
-                        </InputAdornment>,
-                    }}
-                /></div>
-                <div><TextField
-                    id="picture"
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="Picture"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">image</i>
-                        </InputAdornment>,
-                    }}
-                /></div>
-                <div><TextField
-                    select
-                    className={classNames(classes.margin, classes.textField)}
-                    variant="outlined"
-                    label="Status"
-                    value={values.statusRange}
-                    onChange={handleChange('statusRange')}
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end">
-                            <i className="material-icons">face</i>
-                        </InputAdornment>,
-                    }}
-                >
-                    {ranges.map(option => (
-                        <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                    ))}
-                </TextField></div>
+            <form className="profileForm" onSubmit={sendProfile}>
+                <div className="username">
+                    <TextField
+                        id="username"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="Username"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">account_box</i>
+                            </InputAdornment>,
+                        }}
+                    />
+                </div>
+                <div className="password">
+                    <TextField
+                        id="password"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        type={values.showPassword ? 'text' : 'password'}
+                        label="Password"
+                        value={values.password}
+                        onChange={handleChange('password')}
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton aria-label="Toggle password visibility" onClick={handleClickShowPassword}>
+                                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                </div>
+                <div className="confirm">
+                    <TextField
+                        id="confirm"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        type={values.showConfirm ? 'text' : 'confirm'}
+                        label="Confirm"
+                        value={values.confirm}
+                        onChange={handleChange('confirm')}
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton aria-label="Toggle confirm visibility" onClick={handleClickShowConfirm}>
+                                        {values.showConfirm ? <VisibilityOff /> : <Visibility />}
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                </div>
+                <div className="fname">
+                    <TextField
+                        id="fname"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="First Name"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">person</i>
+                            </InputAdornment>,
+                        }}
+                    />
+                </div>
+                <div className="lname">
+                    <TextField
+                        id="lname"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="Last Name"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">perm_identity</i>
+                            </InputAdornment>,
+                        }}
+                    />
+                </div>
+                <div className="location">
+                    <TextField
+                        id="location"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="Location"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">location_on</i>
+                            </InputAdornment>,
+                        }}
+                    />
+                </div>
+                <div className="picURL">
+                    <TextField
+                        id="picture"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="Picture"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">image</i>
+                            </InputAdornment>,
+                        }}
+                    />
+                </div>
+                <div className="status">
+                    <TextField
+                        select
+                        id="status"
+                        className={classNames(classes.margin, classes.textField)}
+                        variant="outlined"
+                        label="Status"
+                        value={values.statusRange}
+                        onChange={handleChange('statusRange')}
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                <i className="material-icons">face</i>
+                            </InputAdornment>,
+                        }}
+                    >
+                        {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                        ))}
+                    </TextField>
+                </div>
+                <div><a href="/" className="chatLink"><Button variant="contained" color="primary" className="profDataButton">Submit</Button></a></div>
             </form>
         </div>
     );
